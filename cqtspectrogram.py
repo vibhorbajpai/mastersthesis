@@ -6,7 +6,7 @@ import numpy as np
 # Load sound file
 y, sr = librosa.load("/Users/Vibhor/Documents/AcademicsAndCV/UPF/MIR/newmodels/datasets/genre_rosamerica/audio/mp3/roc/creed-my_sacrifice.mp3")
 
-# Let's make and display a mel-scaled power (energy-squared) spectrogram
+# Let's make and display a CQT spectrogram
 S = librosa.cqt(y, sr=sr)
 
 # Convert to log scale (dB). We'll use the peak power as reference.
@@ -15,7 +15,7 @@ log_S = librosa.logamplitude(S, ref_power=np.max)
 # Make a new figure
 plt.figure(figsize=(12,4))
 
-# Display the spectrogram on a linear scale
+# Display the spectrogram on a cqt scale
 # sample rate and hop length parameters are used to render the time axis
 librosa.display.specshow(log_S, sr=sr, x_axis='time', y_axis='cqt_note')
 

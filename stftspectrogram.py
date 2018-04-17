@@ -6,7 +6,7 @@ import numpy as np
 # Load sound file
 y, sr = librosa.load("/Users/Vibhor/Documents/AcademicsAndCV/UPF/MIR/newmodels/datasets/genre_rosamerica/audio/mp3/roc/creed-my_sacrifice.mp3")
 
-# Let's make and display a mel-scaled power (energy-squared) spectrogram
+# Let's make and display a linear spectrogram
 S = librosa.stft(y)
 
 # Convert to log scale (dB). We'll use the peak power as reference.
